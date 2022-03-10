@@ -2,6 +2,6 @@
 
 int main(void)
 {
-    puts("programming in c is fun,\n");
+    puts("Programming is like building a multilingual puzzle,\n");
     return (0);
 }
