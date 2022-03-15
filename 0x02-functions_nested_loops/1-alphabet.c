@@ -2,11 +2,11 @@
 
 
 /**
- * main - program that prints the alphabet in lowercase,
- * followed by a new line.
+ * print_alphabet - This function prints the alphabet in lower case.
  *
- * Return: Always 0.
+ *Return: 0 (success)
  */
+
 void print_alphabet(void);
 {
 	char ch;
