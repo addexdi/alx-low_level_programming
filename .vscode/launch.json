@@ -5,9 +5,7 @@
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
-      "args": [
-        ""
-      ],
+      "args": [],
       "stopAtEntry": false,
       "cwd": "f:/Users/IBRAHIM/alx-low_level_programming",
       "environment": [],
