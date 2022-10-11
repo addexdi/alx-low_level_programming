@@ -1,7 +1,7 @@
 #include "hash_tables.h"
 
 /**
- * shash_table_create - creates a sorted hash table
+ * shash_table_create - this creates a sorted hash table
  * @size: size of the hash table
  *
  * Return: pointer to the new table, or NULL on failure
@@ -99,7 +99,7 @@ void add_to_sorted_list(shash_table_t *table, shash_node_t *node)
 }
 
 /**
- * shash_table_set - sets a key to a value in the hash table
+ * shash_table_set - this sets a key to a value in the hash table
  * @ht: sorted hash table
  * @key: key to the data
  * @value: data to add
@@ -140,7 +140,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 }
 
 /**
- * shash_table_get - retrieve a value from the hash table
+ * shash_table_get - this retrieves a value from the hash table
  * @ht: hash table
  * @key: key to the data
  *
@@ -166,7 +166,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 }
 
 /**
- * shash_table_print - prints a sorted hash table
+ * shash_table_print - this prints a sorted hash table
  * @ht: hash table to print
  *
  * Return: void
@@ -192,7 +192,7 @@ void shash_table_print(const shash_table_t *ht)
 }
 
 /**
- * shash_table_print_rev - prints a sorted hash table in reverse
+ * shash_table_print_rev - this prints a sorted hash table in reverse
  * @ht: hash table to print
  *
  * Return: void
@@ -218,7 +218,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 }
 
 /**
- * shash_table_delete - deletes a sorted hash table
+ * shash_table_delete - this deletes a sorted hash table
  * @ht: hash table to delete
  *
  * Return: void

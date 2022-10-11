@@ -1,19 +1,29 @@
 #include <stdio.h>
+
 /**
- *main - check for multiples of 3 and 5
+ * main - count multiple
  *
- *Return: 0 always
+ * Return: void
  */
 int main(void)
 {
-int x = 1024, y, sum = 0;
-for (y = 0; y < x; y++)
-{
-if ((y % 3 == 0) || (y % 5 == 0))
-{
-sum = sum + y;
-}
-}
-printf("%d\n", sum);
-return (0);
+	int a, b, s, x, y;
+
+	s = 0;
+	for (a = 0; a <= (1024 / 3); a++)
+	{
+		y = a * 3;
+		s = s + y;
+	}
+	for (b = 0; b < (1024 / 5); b++)
+	{
+		if (!(b % 3 == 0))
+		{
+			x = b * 5;
+			s = s + x;
+		}
+	}
+	printf("%i\n", s);
+
+	return (0);
 }

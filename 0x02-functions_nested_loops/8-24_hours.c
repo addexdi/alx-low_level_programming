@@ -1,8 +1,12 @@
 #include "main.h"
 
 /**
- * jack_bauer - Imprimir todas las horas del dia
+ * jack_bauer - This function prints every
+ * minute of the day of Jack Bauer
+ *
+ * Return: always 0
  */
+
 void jack_bauer(void)
 {
 	int hour, minute;

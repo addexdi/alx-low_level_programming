@@ -4,15 +4,15 @@
  * print_last_digit - This function prints the
  * last digit of a number
  *
- * @r: is an ascii character
+ * @j: is an ascii character
  *
  * Return: Always 0
  */
-int print_last_digit(int r)
+int print_last_digit(int j)
 {
 	int i;
 
-	i = r % 10;
+	i = j % 10;
 
 	if (i < 0)
 	{

@@ -1,1 +1,3 @@
-# 0x01. C - Variables, if, else, while
+#!/bin/bash
+Variables, If, else, why
+

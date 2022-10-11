@@ -1,7 +1,2 @@
-# 0x1C. C - Makefiles
+# Make Files
 
-## Resources
-
-## Read or watch:
-
-  - Makefile

@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * add - Suma dos enteros por función.
- * @i: Primera varable entera a sumar.
- * @l: Segunda variable a sumar.
- * Return: retorno con sumatoria
+ * add - This function adds two integers
+ * @i: i is an integer
+ * @l: l is an integer
+ * Return: always (n)
  */
 int add(int i, int l)
 {
 	int n;
-	 n = i + l;
+		n = i + l;
 	return (n);
 }

@@ -1,24 +1,26 @@
 #include <stdio.h>
+
 /**
- *main - print first 50 fibonacci
+ * main - even libber abbaci
  *
- *Return: 0 always.
+ * Return: void
  */
 int main(void)
 {
-	long int i, x = 1, y = 2, sum = 0, tSum = 0;
+	unsigned int i, j, y, k, s;
 
-	for (i = 0; i < 49; i++)
+	i = 1;
+	j = 2;
+	y = 3;
+	k = 2;
+	for (s = 2; s <= 32; s++)
 	{
-		if ((y % 2 == 0) && (y <= 4000000))
-		{
-			tSum = tSum + y;
-		}
-		sum = x + y;
-		x = y;
-		y = sum;
-
+		if (y % 2 == 0)
+			k = k + y;
+		i = j;
+		j = y;
+		y = i + j;
 	}
-	printf("%ld\n", tSum);
+	printf("%u\n", k);
 	return (0);
 }

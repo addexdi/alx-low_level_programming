@@ -1,1 +1,3 @@
-# 0x00-hello_world
+#!/bin/bash
+Starting to learn low level programming language
+

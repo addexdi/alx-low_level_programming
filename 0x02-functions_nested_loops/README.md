@@ -1,1 +1,2 @@
-# 0x02-functions_nested_loops
+This explains functions and nested loops
+

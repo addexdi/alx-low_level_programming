@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- *print_times_table - print time table.
+ * print_times_table - print time table.
  * @n: integer.
- *Return:void.
+ * Return: void.
  */
 void print_times_table(int n)
 {

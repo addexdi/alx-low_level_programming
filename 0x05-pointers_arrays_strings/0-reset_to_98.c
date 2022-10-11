@@ -1,11 +1,13 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
-*reset_to_98 -set the integer to 402
-* @n: a pointer to the integer we want to set 98
-*Return : nothing
-*/
+ *reset_to_98 - This function takes a pointer to an int
+ * @n: pointer with the address value
+ *
+ * Return: Always 0
+ */
 void reset_to_98(int *n)
 {
-*n = 98;
+	*n = 98;
 }

@@ -1,1 +1,2 @@
-# Creating Pointers, arrays and strings
+This directory uses pointers and arrays to create programs
+
