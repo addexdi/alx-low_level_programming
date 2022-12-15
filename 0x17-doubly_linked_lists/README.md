@@ -1,1 +1,1 @@
-**This direectory is for doubly linked lists**
+DOUBLY-LINKED LIST PROJECT FOR C PROGRAMMING

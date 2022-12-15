@@ -1,2 +1,1 @@
-This is a directory about preprocessing
-
+This project is for preprocessor

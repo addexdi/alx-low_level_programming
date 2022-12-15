@@ -1,2 +1,1 @@
-This directory writes functions on pointers, arrays and strings
-
+This is a continuation of the pointers, arrays and strings project

@@ -1,33 +1,47 @@
 #include <stdio.h>
-
 /**
- * main - prints fizz buzz
- * @void: no arguement
+ * main - entry point
  *
- * Return: 0 success
+ * Return: void
  */
+
 int main(void)
 {
+
+	int p = 100;
 	int i;
 
-	for (i = 1; i < 100; i++)
-		if (i % 15 == 0)
-		{
-			printf("FizzBuzz ");
-		}
-		else if (i % 5 == 0)
-		{
-			printf("Buzz ");
-		}
-		else if (i % 3 == 0)
-		{
-			printf("Fizz ");
-		}
+	i = 1;
+	while (i <= p)
+	{
+		if (i % 3 == 0 && i % 5 == 0)
+	{
+		printf("FizzBuzz ");
+	}
+
+	else if (i % 3 == 0)
+	{
+		printf("Fizz ");
+	}
+
+	else if (i % 5 == 0)
+	{
+		if (i < p)
+		printf("Buzz ");
+
 		else
-		{
-			printf("%d ", i);
-		}
-	printf("Buzz");
+		printf("Buzz");
+	}
+
+	else
+	{
+		printf("%i ", i);
+	}
+
+	i++;
+
+
+	}
 	printf("\n");
 	return (0);
 }

@@ -1,2 +1,1 @@
-This directory is about Bits Manipulation
-
+This directory holds files for bit manipulation in C

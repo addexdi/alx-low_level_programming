@@ -1,12 +1,11 @@
 #include "main.h"
+/* This is the main header file */
 
 /**
- * main - program that prints putchar
+ * main - Entry point
  *
- * Return: Always 0
- *
+ * Return: returns zero when execution is successful
  */
-
 int main(void)
 {
 	_putchar('_');
@@ -18,5 +17,6 @@ int main(void)
 	_putchar('a');
 	_putchar('r');
 	_putchar('\n');
+
 	return (0);
 }

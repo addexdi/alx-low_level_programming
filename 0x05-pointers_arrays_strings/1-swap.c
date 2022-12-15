@@ -1,20 +1,17 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
- * swap_int - This function swaps the value of
- * two integers.
- * @a: pointer with the address value
- * @b: pointer with the address value
+ *swap_int - swap the values of two integers
  *
- * Return: void
+ *@a: a pointer to an integer that will be updated
+ *@b: a pointer to an integer that will also be updated
+ *Return: returns void that means our anser is correct
  */
-
 void swap_int(int *a, int *b)
 {
-	int i;
+	int f;
 
-	i = *a;
+	f = *a;
 	*a = *b;
-	*b = i;
+	*b = f;
 }

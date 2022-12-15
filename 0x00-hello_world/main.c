@@ -1,21 +1,6 @@
 #include <stdio.h>
 
-
-
-/**
- *
- *  * main - Entry point
- *
- *   *
- *
- *    * Return: Always 0 (Success)
- *
- *     */
-
-int main(void)
-
+void main(void)
 {
-
-	    return (0);
-
+	printf("Just a regular static libraries");
 }

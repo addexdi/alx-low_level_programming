@@ -1,11 +1,10 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- *reset_to_98 - This function takes a pointer to an int
- * @n: pointer with the address value
+ * reset_to_98 - updates an integer to 98
  *
- * Return: Always 0
+ * @n: a pointer to an int that will be updated
+ * Return: void that means its correct
  */
 void reset_to_98(int *n)
 {

@@ -1,2 +1,1 @@
-This directory talks about typedef and structures
-
+This project is about using structures in C and using typedef

@@ -6,7 +6,6 @@
  * @n: integer
  * Return: 1 if true, 0 if false
  */
-
 int isPrintableASCII(int n)
 {
 	return (n >= 32 && n <= 126);
@@ -18,7 +17,6 @@ int isPrintableASCII(int n)
  * @start: starting position
  * @end: ending position
  */
-
 void printHexes(char *b, int start, int end)
 {
 	int i = 0;

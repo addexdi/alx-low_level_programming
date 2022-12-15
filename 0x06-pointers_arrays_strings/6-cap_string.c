@@ -1,63 +1,33 @@
 #include "main.h"
-#include <stdio.h>
-
-/**
- * isLower - determines whether ascii is lowercase
- * @c: character
- * Return: 1 if true, 0 if false
- */
-
-int isLower(char c)
-{
-	return (c >= 97 && c <= 122);
-}
-
-/**
- * isDelimiter - determines whether ascii is a delimiter
- * @c: character
- * Return: 1 if true, 0 if false
- */
-
-int isDelimiter(char c)
-
-{
-	int i;
-
-	char delimiter[] = " \t\n,.!?\"(){}";
-
-	for (i = 0; i < 12; i++)
-		if (c == delimiter[i])
-			return (1);
-	return (0);
-}
-
 /**
  * cap_string - capitalizes all words of a string
- * @s: input string
- * Return: string with capitalized words
+ * @s: input string.
+ * Return: the pointer to dest.
  */
+
 
 char *cap_string(char *s)
 {
+	int count = 0, i;
+	int separators[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
 
-	char *ptr = s;
-
-	int foundDelimit = 1;
-
-	while (*s)
-
+	if (*(s + count) >= 97 && *(s + count) <= 122)
 	{
-		if (isDelimiter(*s))
-			foundDelimit = 1;
-		else if (isLower(*s) && foundDelimit)
-		{
-			*s -= 32;
-			foundDelimit = 0;
-		}
-		else
-			foundDelimit = 0;
-		s++;
+		*(s + count) = *(s + count) - 32;
 	}
-
-	return (ptr);
+	count++;
+	while (*(s + count) != '\0')
+	{
+		for (i = 0; i < 13; i++)
+	{
+			if (*(s + count) == separators[i])
+	{
+				if ((*(s + (count + 1)) >= 97) && (*(s + (count + 1)) <= 122))
+				*(s + (count + 1)) = *(s + (count + 1)) - 32;
+				break;
+	}
+	}
+		count++;
+	}
+	return (s);
 }

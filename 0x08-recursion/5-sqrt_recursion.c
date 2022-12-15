@@ -1,32 +1,44 @@
 #include "main.h"
-
 /**
- * _sqrt_recursion - find natural square root
- * @n: int
- * @val: square root
- * Return: int
+ *_evaluate - evaluate function sqrt
+ *@i: interger
+ *@n: interger
+ *Return: evaluate sqrt
  */
 
-int square(int n, int val);
-
-int _sqrt_recursion(int n)
+int _evaluate(int i, int n)
 {
-return (square(n, 1));
+/*Evaluate function*/
+	if (n == 0 || n == 1)
+		return (n);
+
+	else if (i * i < n)
+		return (_evaluate(i + 1, n));
+
+	else if (i * i == n) /*Condiction base*/
+		return (i);
+
+	return (-1);
+
+	return (-1);
 }
 
 /**
- * square - find square root
- * @n: int to find square root
- * @val: square root
- * Return: int
- */
+ *_sqrt_recursion - evaluate sqrt
+ *@n: interger
+ *Return: Sgrt_recursion
+*/
 
-int square(int n, int val)
+int _sqrt_recursion(int n)
 {
-if (val * val == n)
-	return (val);
-else if (val * val < n)
-	return  (square(n, val + 1));
-else
-	return (-1);
+	int i = 0;
+
+	if (i < 0) /*If n is negative*/
+		return (-1);
+
+	else
+{
+		return (_evaluate(i, n)); /*Recursive call*/
+}
+
 }

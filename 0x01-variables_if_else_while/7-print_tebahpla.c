@@ -1,21 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
+/* These are all the header files used */
 
 /**
- * main - Program prints the lowercase
- * alphabet in reverse, followed by a new line.
+ * main- Prints alphabets in reverse order
  *
- * Return: Always 0.
+ * Description: All alphabets are printed using putchar() in reverse method
+ * Return: returns zero if code is sucessful
  */
 int main(void)
 {
-	char ch;
+	int ch;
 
 	for (ch = 'z'; ch >= 'a'; ch--)
 	{
-		putchar(ch);
+	putchar (ch);
 	}
 
-	putchar('\n');
+	printf("\n");
 	return (0);
 }

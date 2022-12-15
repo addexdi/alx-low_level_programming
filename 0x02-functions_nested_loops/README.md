@@ -1,2 +1,1 @@
-This explains functions and nested loops
-
+This project is based on C functions and nested loop with several projects

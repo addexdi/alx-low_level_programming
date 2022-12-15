@@ -1,1 +1,1 @@
-**This directory is for dynamic libraries**
+Dynamic linking in GCC

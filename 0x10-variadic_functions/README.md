@@ -1,2 +1,1 @@
-This is a directory for variadic functions
-
+My project on variadic functtions in C language

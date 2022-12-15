@@ -1,2 +1,1 @@
-This directory uses pointers and arrays to create programs
-
+This is for pointers, arrays and string constant projects

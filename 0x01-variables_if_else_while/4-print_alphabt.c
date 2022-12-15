@@ -1,22 +1,40 @@
 #include <stdio.h>
 #include <stdlib.h>
+/* These are my header files*/
 
 /**
- * main - prints the alphabet in lowercase
- * followed by a new line, except q and e.
+ * main - prints alphabets except q and e
  *
- * Return: Always 0.
+ * Description: alplabets from a to z are printed excluding q and e
+ * Return: returns zero at the end of the block
  */
 int main(void)
 {
-	char ch;
+	int ch;
 
-	for (ch = 'a'; ch <= 'z'; ch++)
+	ch = 'a';
+
+	while (ch <= 'z')
 	{
-		if (ch != 'q' && ch != 'e')
-			putchar(ch);
-	}
+		if (ch == 'q')
+		{
+			ch++;
+			continue;
+		}
 
-	putchar('\n');
+		else if (ch == 'e')
+		{
+			ch++;
+			continue;
+		}
+		else
+		{
+			putchar (ch);
+			ch++;
+		}
+
+	}
+	printf("\n");
 	return (0);
 }
+

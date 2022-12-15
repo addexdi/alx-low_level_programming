@@ -1,19 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
+/* These are all header files*/
 
 /**
- * main - Program prints all single digit numbers of base 10
- * starting from 0, followed by a new line.
+ * main- prints all numbers in base ten
  *
- * Return: Always 0.
+ * Description: All numbers will be printed
+ * Return: returns zero
  */
 int main(void)
 {
-	int i;
+	int i = 0;
+	int count = 10;
 
-	for (i = 0; i < 10; i++)
+	while (i <= 9)
 	{
 		printf("%d", i);
+		i++;
+		count++;
 	}
 	printf("\n");
 	return (0);

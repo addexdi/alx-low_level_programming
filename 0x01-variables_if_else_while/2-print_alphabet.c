@@ -1,21 +1,26 @@
 #include <stdio.h>
-#include <stdlib.h>
+/* standard input output header used as header file */
 
 /**
- * main - program that prints the alphabet in lowercase,
- * followed by a new line.
+ * main - prints all alphabets between a-z
+ * @i = integer values corresponding to ANCII value of char
  *
- * Return: Always 0.
+ * Description: This will take a number print the ANCII char value
+ * and the increment and do like wise until count is exhausted
+ * Return: zero
  */
+
 int main(void)
 {
-	char ch;
+	int i;
 
-	for (ch = 'a'; ch <= 'z'; ch++)
+	for (i = 97; i <= 122; i++)
 	{
-		putchar(ch);
+		printf("%c", i);
+
 	}
 
-	putchar('\n');
+	printf("\n");
+
 	return (0);
 }

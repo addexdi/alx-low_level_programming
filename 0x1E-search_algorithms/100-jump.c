@@ -1,62 +1,46 @@
 #include "search_algos.h"
-#include <math.h>
-
+int minimum(int left, int right);
 /**
- * minimum_value - this finds the minimum of two values
- * @a: first value to compare
- * @b: second value to compare
- *
- * Return: The smaller of the two values, or a if equal
- */
-size_t minimum_value(size_t a, size_t b)
-{
-	if (b < a)
-		return (b);
-	return (a);
-}
-
-
-/**
- * jump_search - searches for a value in a sorted array of integers using the
- * Jump search algorithm
- * @array: pointer to the first element of the array to search in
- * @size: number of elements in array
- * @value: value to search for
- *
- * Return: first index where value is located, or -1 on failure
- */
+* jump_search - searches for a value in a sorted array
+* of integers using jump search algorithm
+* @array: is a pointer to the first element of the array to search in
+* @size: size of the array
+* @value: is the value to search for
+* Return: If value is not present in array return -1
+*/
 int jump_search(int *array, size_t size, int value)
 {
-	size_t l, r, jump;
-	int val;
+	int prev = 0, jump = sqrt((int)size), pos = 0;
 
-	if (array != NULL && size > 0)
+	if (array == NULL)
+		return (-1);
+	for (; prev <= (int)size - 1; prev += jump)
 	{
-		jump = sqrt(size);
-		l = 0;
-		r = jump;
-		val = array[l];
-		printf("Value checked array[%lu] = [%d]\n", l, val);
-		while (r < size && val < value)
+		if (array[prev] >= value)
+			break;
+		printf("Value checked array[%d] = [%d]\n", prev, array[prev]);
+	}
+	pos = prev - jump;
+	printf("Value found between indexes [%d] and [%d]\n", pos, prev);
+	for (; pos <= prev; pos++)
+	{
+		if (pos < (int)size)
 		{
-			if (array[r] >= value)
-				break;
-			l += jump;
-			r += jump;
-			val = array[l];
-			printf("Value checked array[%lu] = [%d]\n", l, val);
-		}
-		if (l >= size || val > value)
-			return (-1);
-		printf("Value found between indexes [%lu] and [%lu]\n", l, r);
-		while (l <= minimum_value(size - 1, r) && val <= value)
-		{
-			val = array[l];
-			printf("Value checked array[%lu] = [%d]\n", l, val);
-			if (val == value)
-				return (l);
-			l++;
+			printf("Value checked array[%d] = [%d]\n", pos, array[pos]);
+			if (array[pos] == value)
+				return (pos);
 		}
 	}
 	return (-1);
+}
+
+/**
+* minimum - return the minimum of two numbers
+* @left: first number
+* @right:second number
+* Return: Return the minimum
+*/
+int minimum(int left, int right)
+{
+	return (left <= right ? left : right);
 }

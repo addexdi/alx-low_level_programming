@@ -1,73 +1,53 @@
 #include "hash_tables.h"
 
 /**
- * make_hash_node - this creates a new hash node
- * @key: key for the node
- * @value: for the node
+ * hash_table_set- This function adds an element to the hash table.
+ * @ht: pointer to the an hash table created earlier.
+ * @key: the key that will be used in djb2 function to get an index.
+ * @value: the corresponding value to the key.
  *
- * Return: the new node, or NULL on failure
- */
-hash_node_t *make_hash_node(const char *key, const char *value)
-{
-	hash_node_t *node;
-
-	node = malloc(sizeof(hash_node_t));
-	if (node == NULL)
-		return (NULL);
-	node->key = strdup(key);
-	if (node->key == NULL)
-	{
-		free(node);
-		return (NULL);
-	}
-	node->value = strdup(value);
-	if (node->value == NULL)
-	{
-		free(node->key);
-		free(node);
-		return (NULL);
-	}
-	node->next = NULL;
-	return (node);
-}
-
-
-/**
- * hash_table_set - sets a key to a value in the hash table
- * @ht: hash table to add elemt to
- * @key: key for the data
- * @value: data to store
- *
- * Return: 1 if successful, 0 otherwise
+ * Return: on malloc failure returns NUll or 0 otherwise retuens 1.
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int index;
-	hash_node_t *hash_node, *tmp;
-	char *new_value;
+	unsigned long int index, i;
+	hash_node_t *new;
+	char *value_dub;
+	char *key_dub;
 
-	if (ht == NULL || ht->array == NULL || ht->size == 0 ||
-	    key == NULL || strlen(key) == 0 || value == NULL)
+	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
+		return (0);
+	key_dub = strdup(key);
+	if (key_dub == NULL)
+		return (0);
+	value_dub = strdup(value);
+	if (value_dub == NULL)
 		return (0);
 	index = key_index((const unsigned char *)key, ht->size);
-	tmp = ht->array[index];
-	while (tmp != NULL)
+	for (i = index; ht->array[i]; i++)
 	{
-		if (strcmp(tmp->key, key) == 0)
+		if (strcmp(ht->array[i]->key, key) == 0)
 		{
-			new_value = strdup(value);
-			if (new_value == NULL)
-				return (0);
-			free(tmp->value);
-			tmp->value = new_value;
+			free(ht->array[i]->value);
+			ht->array[i]->value = value_dub;
 			return (1);
 		}
-		tmp = tmp->next;
 	}
-	hash_node = make_hash_node(key, value);
-	if (hash_node == NULL)
+	new = malloc(sizeof(hash_node_t));
+	if (new == NULL)
+	{
+		free(new);
+		free(value_dub);
 		return (0);
-	hash_node->next = ht->array[index];
-	ht->array[index] = hash_node;
+	}
+	new->key = key_dub;
+	if (new->key == NULL)
+	{
+		free(new);
+		return (0);
+	}
+	new->value = value_dub;
+	new->next = ht->array[index];
+	ht->array[index] = new;
 	return (1);
 }

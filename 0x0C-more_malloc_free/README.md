@@ -1,2 +1,1 @@
-This directory contains more malloc free
-
+This is my project on dynamic memory allocation using malloc, calloc and realloc.

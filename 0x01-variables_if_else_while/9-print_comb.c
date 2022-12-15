@@ -1,24 +1,23 @@
 #include <stdio.h>
+#include <stdlib.h>
+/* Header files for this project */
 
 /**
- * main - Prints numbers between 0 to 9
- * with commas and spaces.
+ * main- prints characters
  *
- * Return: Always 0.
+ * Description: This just prints
+ * Return: returns characters and numbers
  */
 int main(void)
 {
 	int i;
 
-	for (i = 48; i < 58; i++)
+	for (i = '0'; i <= '8'; i++)
 	{
 		putchar(i);
-		if (i != 57)
-		{
-			putchar(',');
-			putchar(' ');
-		}
+		putchar(',');
+		putchar(' ');
 	}
-	putchar('\n');
+	putchar('9');
 	return (0);
 }

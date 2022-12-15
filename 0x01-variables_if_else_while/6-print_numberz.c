@@ -1,21 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
+/* Headers file used */
 
 /**
- * main - Program prints all single digit numbers of
- * base 10 starting from 0, followed by a new line.
+ * main - prints numbers using putchar
  *
- * Return: Always 0.
+ * Description: prints numbers using only putchar function
+ * Return: returns zero when programme is completed
  */
 int main(void)
 {
-	int i;
+	int ch;
 
-	for (i = 48; i < 58; i++)
+	ch = '0';
+	while (ch <= '9')
 	{
-		putchar(i);
+		putchar(ch);
+		ch++;
 	}
-
 	putchar('\n');
 	return (0);
 }

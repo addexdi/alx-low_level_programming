@@ -1,26 +1,22 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * puts2 - this function prints every other character of a string
- * (Divisible by two)
- * @str: pointer, the string to print
+ * puts2 - prints every character of a string
  *
- * Return: void
+ *@str: A pointer to an int
+ * Return: void means correct
  */
-
 void puts2(char *str)
 {
-	int i = 0;
+	int a;
 
-	while (str[i] != '\0')
+	for (a = 0; str[a] != '\0'; a++)
 	{
-		if (i % 2 == 0)
+		if (a % 2 == 0)
 		{
-			_putchar(str[i]);
+			_putchar (str[a]);
 		}
-
-		i++;
 	}
-	_putchar('\n');
+	_putchar ('\n');
 }
+

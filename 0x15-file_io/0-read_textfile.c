@@ -1,44 +1,36 @@
 #include "main.h"
 
 /**
-* read_textfile - check the code for Holberton School students.
-* @filename: file to read and write
-* @letters: number of letters to read and write.
-* Return: letters printed
-*/
-
+ * read_textfile - reads a text file and prints the letters
+ * @filename: filename.
+ * @letters: numbers of letters printed.
+ *
+ * Return: numbers of letters printed. It fails, returns 0.
+ */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t nletters;
-	int file;
-	char *text;
+	int fd;
+	ssize_t nrd, nwr;
+	char *buf;
 
 	if (!filename)
 		return (0);
-	text = malloc(sizeof(char) * letters + 1);
-	if (text == NULL)
+
+	fd = open(filename, O_RDONLY);
+
+	if (fd == -1)
 		return (0);
-	file = open(filename, O_RDONLY);
-	if (file == -1)
-	{
-		free(text);
+
+	buf = malloc(sizeof(char) * (letters));
+	if (!buf)
 		return (0);
-	}
-	nletters = read(file, text, sizeof(char) * letters);
-	if (nletters == -1)
-	{
-		free(text);
-		close(file);
-		return (0);
-	}
-	nletters = write(STDOUT_FILENO, text, nletters);
-	if (nletters == -1)
-	{
-		free(text);
-		close(file);
-		return (0);
-	}
-	free(text);
-	close(file);
-	return (nletters);
+
+	nrd = read(fd, buf, letters);
+	nwr = write(STDOUT_FILENO, buf, nrd);
+
+	close(fd);
+
+	free(buf);
+
+	return (nwr);
 }

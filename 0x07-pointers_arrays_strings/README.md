@@ -1,2 +1,1 @@
-This writes more functions on pointers, arrays and strings.
-
+This is the read me for pointers

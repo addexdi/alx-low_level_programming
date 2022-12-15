@@ -1,2 +1,1 @@
-This directory is for function pointers
-
+This is for function pointers project

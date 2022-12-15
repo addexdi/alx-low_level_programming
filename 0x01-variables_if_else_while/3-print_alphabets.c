@@ -1,26 +1,26 @@
 #include <stdio.h>
-#include <stdlib.h>
+/* standard input output header file */
 
 /**
- * main - Program prints the alphabet in lowercase,
- * and then in uppercase, followed by a new line.
+ * main - prints all characterss in lower and upper case
  *
- * Return: Always 0;
+ * Description: Prints all cases of letters after the function
+ * Return: returns zero
  */
 int main(void)
 {
-	char ch;
+	int ch;
 
 	for (ch = 'a'; ch <= 'z'; ch++)
 	{
-		putchar(ch);
+		putchar (ch);
 	}
 
 	for (ch = 'A'; ch <= 'Z'; ch++)
 	{
-		putchar(ch);
+		putchar (ch);
 	}
 
-	putchar('\n');
+	printf("\n");
 	return (0);
 }

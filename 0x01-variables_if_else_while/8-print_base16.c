@@ -1,28 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
+/* Headers used for the project */
 
 /**
- * main - Program prints all the numbers of
- * base 16 in lowercase, followed by a new line.
+ *main- prints all hex values
  *
- * Return: Always 0.
+ * Description: This prints all the hex digits and This prints for answer main
+ * Return: This returns zero after final execution
  */
 int main(void)
 {
+	int ch;
 	int i;
 
-	char ch;
-
-	for (i = 48; i < 58; i++)
-	{
-		putchar(i);
-	}
-
-	for (ch = 'a'; ch <= 'f'; ch++)
+	for (ch = '0'; ch <= '9'; ch++)
 	{
 		putchar(ch);
 	}
-
+	for (i = 'a'; i <= 'f'; i++)
+	{
+		putchar (i);
+	}
 	putchar('\n');
 	return (0);
 }

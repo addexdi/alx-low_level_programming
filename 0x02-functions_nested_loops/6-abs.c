@@ -1,22 +1,24 @@
 #include "main.h"
+/* main header file here */
 
 /**
- * _abs - This function computes the absolute
- *  value of an integer
+ * _abs - finds the absolute vale of a number
  *
- *  @r: r is an ascii character
- *
- *  Return: always r (success) or -r (negative)
+ * @n: holds the number
+ * Return: returns the absolute value of the number n
  */
-
-int _abs(int r)
+int _abs(int n)
 {
-	if (r >= 0)
+	if (n < 0)
 	{
-		return (r);
+		return (n * -1);
+	}
+	else if (n == 0)
+	{
+		return (0);
 	}
 	else
 	{
-		return (-r);
+		return (n);
 	}
 }

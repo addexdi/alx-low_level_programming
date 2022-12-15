@@ -1,2 +1,1 @@
-This directory is for static libraries
-
+This is for static libraries project

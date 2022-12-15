@@ -1,27 +1,25 @@
-#include <stdio.h>
 #include "main.h"
-
+#include <stdio.h>
 /**
- * print_array - prints n elements of an array of integer
- * @a: int type array pointer
- * @n: int type integer
+ * print_array - prints n elements
  *
- * Return: void
+ * @a: A pointer
+ * @n: return value n
+ * Return: void which means correct
  */
 void print_array(int *a, int n)
 {
 	int i;
 
 	i = 0;
-	for (n--; n >= 0; n--, i++)
+	while (i < n)
 	{
 		printf("%d", a[i]);
-		if (n > 0)
+		if (i < n - 1)
 		{
 			printf(", ");
 		}
+		i++;
 	}
-
 	printf("\n");
-
 }

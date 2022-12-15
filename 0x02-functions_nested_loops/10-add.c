@@ -1,14 +1,14 @@
 #include "main.h"
+/* Main header file */
 
 /**
- * add - This function adds two integers
- * @i: i is an integer
- * @l: l is an integer
- * Return: always (n)
+ * add - adds two numbers together
+ *
+ * @i: holds one value
+ * @k: holds another value
+ * Return: returns zero
  */
-int add(int i, int l)
+int add(int i, int k)
 {
-	int n;
-		n = i + l;
-	return (n);
+	return (i + k);
 }

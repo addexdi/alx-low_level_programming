@@ -1,14 +1,15 @@
-section	.text
-	global	main
+SECTION .data
+msg:	db "Hello, Holberton", 0
+fmt:	db "%s", 10, 0
 
+	SECTION .text
+	extern printf
+	global main
 main:
-	mov eax, 1 ; syscall 1 is write
-	mov edi, 1
-	lea rsi, [hello_text] ;array to write
-	mov edx , 17
-	syscall
-	mov eax , 60
-	xor edi , edi
-	syscall
-section	.data
-	hello_text: db "Hello, Holberton", 0x0a
+	mov esi, msg
+	mov edi, fmt
+	mov eax, 0
+	call printf
+
+	mov eax, 0
+	ret

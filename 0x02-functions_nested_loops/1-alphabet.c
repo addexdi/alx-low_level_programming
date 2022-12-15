@@ -1,11 +1,12 @@
 #include "main.h"
+/* This is for the main header file */
 
 /**
- * print_alphabet - This function prints the alphabet in lower case.
+ * print_alphabet- prints alphabets from a-z
  *
- *Return: 0 (success)
+ * Return: Always 0
+ * }
  */
-
 void print_alphabet(void)
 {
 	char i;
