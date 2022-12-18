@@ -1,20 +1,19 @@
-#include "main.h"
+#include "holberton.h"
 /**
- *_strcmp - compares two strings
- *@s1: A pointer to a character that will be changed
- *@s2: A pointer to a character that will also be changed/modified/updated
- *Return: dest
+ * _strcmp - writes the character c to stdout
+ * @s1: The character to print
+ * @s2: dsfsdfsdfsdfd
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
-
 int _strcmp(char *s1, char *s2)
 {
-	char *str_one = s1;
-	char *str_two = s2;
+	int a = 0;
 
-	while (*str_one != '\0' && *str_two != '\0' && *str_one == *str_two)
+	while (s1[a] == s2[a] && s1[a] && s2[a])
 	{
-	str_one++;
-	str_two++;
+		a++;
 	}
-return (*str_one - *str_two);
+
+	return (s1[a] - s2[a]);
 }

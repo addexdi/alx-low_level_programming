@@ -1,10 +1,13 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
- * reset_to_98 - updates an integer to 98
+ * reset_to_98 - main function.
+ * @n: Pointer with the address value.
  *
- * @n: a pointer to an int that will be updated
- * Return: void that means its correct
+ * Description: This function takes a pointer to an int as parameter
+ * and updates the value it points to to 98.
+ *
+ * Return: none.
  */
 void reset_to_98(int *n)
 {

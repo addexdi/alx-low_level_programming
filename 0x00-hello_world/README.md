@@ -1,1 +1,1 @@
-C LANGUAGE
+These are executable C files

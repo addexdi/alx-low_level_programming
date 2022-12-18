@@ -1,15 +1,13 @@
-#include "main.h"
-/* main header file here */
+#include "holberton.h"
 
 /**
- * print_sign - prints the sign of a number
- *
- * @n: holds the integer
- * Return: returns the value of the sign
+ * print_sign - checks number
+ * @n: entero recibo por main.
+ * Return: 1 if c is lowercase
  */
 int print_sign(int n)
 {
-	if (n > 0)
+	if (n >= 1)
 	{
 		_putchar('+');
 		return (1);

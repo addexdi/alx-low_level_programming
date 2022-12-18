@@ -1,19 +1,21 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
- * _strlen - length of a string
- * @s: A POINTER to an int that will be updated
+ * _strlen - main function.
+ * @s: Pointer with the address value.
+ * Description: This function takes a pointer to an int as parameter
+ * and updates the value it points to to 98.
  *
- * Return: void means correct
+ * Return: none.
  */
 int _strlen(char *s)
 {
-	int u;
+	int i = 0;
 
-	u = 0;
-	while (s[u] != '\0')
+	while (*s != '\0')
 	{
-		u++;
+		i++;
+		s++;
 	}
-return (u);
+	return (i);
 }

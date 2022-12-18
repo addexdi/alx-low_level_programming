@@ -1,17 +1,18 @@
-#include "main.h"
-/**
- * print_numbers - print numbers
- * Return: Always 0.
- */
-void print_numbers(void)
-{
-	int i;
+#include "holberton.h"
 
-	i = 0;
-	while (i < 10)
+/**
+*print_most_numbers - Funtion
+*
+*/
+
+void print_most_numbers(void)
+{
+	int n;
+
+	for (n = 0; n <= 9; n++)
 	{
-		_putchar ((i + '0'));
-		i++;
+		if ((n != 2) && (n != 4))
+			_putchar(n + '0');
 	}
-	_putchar ('\n');
+	_putchar('\n');
 }

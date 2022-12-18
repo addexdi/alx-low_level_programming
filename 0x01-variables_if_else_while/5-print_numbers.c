@@ -1,24 +1,19 @@
 #include <stdio.h>
-#include <stdlib.h>
-/* These are all header files*/
 
 /**
- * main- prints all numbers in base ten
- *
- * Description: All numbers will be printed
- * Return: returns zero
- */
+* main - Lanzador.
+*
+* Return: Always 0.
+*/
+
 int main(void)
 {
-	int i = 0;
-	int count = 10;
+	int a = '0';
 
-	while (i <= 9)
+	for (a = '0'; a <= '9'; a++)
 	{
-		printf("%d", i);
-		i++;
-		count++;
+		putchar(a);
 	}
-	printf("\n");
+	putchar('\n');
 	return (0);
 }

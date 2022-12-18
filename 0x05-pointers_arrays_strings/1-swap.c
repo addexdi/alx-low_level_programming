@@ -1,17 +1,19 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
- *swap_int - swap the values of two integers
+ * swap_int - main function.
+ * @a: Pointer with the address value.
+ * @b: Pointer with the address value.
+ * Description: This function takes a pointer to an int as parameter
+ * and updates the value it points to to 98.
  *
- *@a: a pointer to an integer that will be updated
- *@b: a pointer to an integer that will also be updated
- *Return: returns void that means our anser is correct
+ * Return: none.
  */
 void swap_int(int *a, int *b)
 {
-	int f;
+	int i;
 
-	f = *a;
+	i = *a;
 	*a = *b;
-	*b = f;
+	*b = i;
 }

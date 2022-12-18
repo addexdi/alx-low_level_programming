@@ -1,12 +1,8 @@
-#include "main.h"
-/* This is for the main header file */
+#include "holberton.h"
 
 /**
- * print_alphabet- prints alphabets from a-z
- *
- * Return: Always 0
- * }
- */
+* print_alphabet - llamar la funcion desde el main
+*/
 void print_alphabet(void)
 {
 	char i;

@@ -1,1 +1,1 @@
-This project is for dubugging 
+This folder has to do with debugging

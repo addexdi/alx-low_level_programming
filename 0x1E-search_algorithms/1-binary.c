@@ -1,55 +1,60 @@
 #include "search_algos.h"
-void print_array(int *array, int left, int right);
 /**
-* binary_search - searches for a value in an array of
-* integers using the binary search algorithm
-* @array: is a pointer to the first element of the array to search in
-* @size: the nmber of elements in array
-* @value: is the value to search for
-* Return: If value is not present in array or if array
-* is NULL, your function must return -1
-*/
-int binary_search(int *array, size_t size, int value)
+* pri_arr - prints array
+* array = array
+* start= start point
+* end = ending point
+* Return nothing
+**/
+void pri_arr(int *array, size_t start, size_t end)
 {
-	if (array == NULL)
-		return (-1);
-	return (binary_search_rec(array, 0, (int)size - 1, value));
-}
-
-/**
-* binary_search_rec - recursion for binary search algorithm
-* @array: is a pointer to the first element of the array to search in
-* @left: the less index of the array
-* @right: the highest index of the array
-* @value: is the value to search for
-* Return: If value is not present in array return -1
-*/
-int binary_search_rec(int *array, int left, int right, int value)
-{
-	int mid = left + (right - left) / 2;
-
-	print_array(array, left, right);
-	if (array[mid] == value)
-		return (mid);
-	if (left >= right)
-		return (-1);
-	if (array[mid] < value)
-		return (binary_search_rec(array, mid + 1, right, value));
-	return (binary_search_rec(array, left, mid - 1, value));
-}
-
-/**
-* print_array - print the array
-* @array: is a pointer to the first element of the array to search in
-* @left: the less index of the array
-* @right: the highest index of the array
-*/
-void print_array(int *array, int left, int right)
-{
-	int i = left;
+	unsigned int i;
 
 	printf("Searching in array: ");
-	for (; i < right; i++)
+	for (i = start; i < end; i++)
+	{
 		printf("%d, ", array[i]);
-	printf("%d\n", array[i]);
+	}
+	printf("%d\n", array[end]);
+}
+
+/**
+* binary_search - a function that searches for a value in a
+* sorted array of integers using the Binary search algorithm
+* array: pointer to the first element of the array
+* size: is the number of elements in array
+* value: value to search for
+* Return: index OR -1
+**/
+int binary_search(int *array, size_t size, int value)
+{
+	unsigned int left = 0, right;
+	int middle;
+
+	right = size - 1;
+
+	if (array == NULL)
+		return (-1);
+	if (size == 1)
+	{
+		return (array[left]);
+	}
+	while (right >= left)
+	{
+		if (left == 0 && right == 0)
+			return (-1);
+		pri_arr(array, left, right);
+		middle = (right + left) / 2;
+		if (array[middle] == value)
+			return (array[middle]);
+		else if (array[middle] < value)
+		{
+			left = middle + 1;
+		}
+		else if (array[middle] > value)
+		{
+			right = middle;
+		}
+	}
+	return (-1);
 }

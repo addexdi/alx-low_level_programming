@@ -1,1 +1,1 @@
-DOUBLY-LINKED LIST PROJECT FOR C PROGRAMMING
+Project 0x17-doubly_linked_lists

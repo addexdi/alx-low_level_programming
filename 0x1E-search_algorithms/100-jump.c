@@ -1,46 +1,36 @@
 #include "search_algos.h"
-int minimum(int left, int right);
+
 /**
-* jump_search - searches for a value in a sorted array
-* of integers using jump search algorithm
-* @array: is a pointer to the first element of the array to search in
-* @size: size of the array
-* @value: is the value to search for
-* Return: If value is not present in array return -1
-*/
+  * jump_search - Searches using jump search.
+  * @array: A pointer to the first element of the array to search.
+  * @size: The size of the array.
+  * @value: The value to search for.
+  *
+  * Return: NULL, -1, the first index where the value is located.
+  */
 int jump_search(int *array, size_t size, int value)
 {
-	int prev = 0, jump = sqrt((int)size), pos = 0;
+	size_t i, jump, step;
 
-	if (array == NULL)
+	if (array == NULL || size == 0)
 		return (-1);
-	for (; prev <= (int)size - 1; prev += jump)
-	{
-		if (array[prev] >= value)
-			break;
-		printf("Value checked array[%d] = [%d]\n", prev, array[prev]);
-	}
-	pos = prev - jump;
-	printf("Value found between indexes [%d] and [%d]\n", pos, prev);
-	for (; pos <= prev; pos++)
-	{
-		if (pos < (int)size)
-		{
-			printf("Value checked array[%d] = [%d]\n", pos, array[pos]);
-			if (array[pos] == value)
-				return (pos);
-		}
-	}
-	return (-1);
-}
 
-/**
-* minimum - return the minimum of two numbers
-* @left: first number
-* @right:second number
-* Return: Return the minimum
-*/
-int minimum(int left, int right)
-{
-	return (left <= right ? left : right);
+	step = sqrt(size);
+	for (i = jump = 0; jump < size && array[jump] < value;)
+	{
+		printf("Value checked array[%ld] = [%d]\n", jump, array[jump]);
+		i = jump;
+		jump += step;
+	}
+
+	printf("Value found between indexes [%ld] and [%ld]\n", i, jump);
+
+	if (jump >= size)
+		jump = size - 1;
+
+	for (; i < jump && array[i] < value; i++)
+		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
+	printf("Value checked array[%ld] = [%d]\n", i, array[i]);
+
+	return (array[i] == value ? (int)i : -1);
 }

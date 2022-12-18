@@ -1,26 +1,24 @@
 #include <stdio.h>
-/* standard input output header file */
 
 /**
- * main - prints all characterss in lower and upper case
- *
- * Description: Prints all cases of letters after the function
- * Return: returns zero
- */
+* main - Lanzador.
+*
+* Return: Always 0.
+*/
+
 int main(void)
 {
-	int ch;
+	char a = 'a';
+	char b = 'A';
 
-	for (ch = 'a'; ch <= 'z'; ch++)
+	for (a = 'a'; a <= 'z'; a++)
 	{
-		putchar (ch);
+		putchar(a);
 	}
-
-	for (ch = 'A'; ch <= 'Z'; ch++)
+	for (b = 'A'; b <= 'Z'; b++)
 	{
-		putchar (ch);
+		putchar(b);
 	}
-
-	printf("\n");
+	putchar('\n');
 	return (0);
 }

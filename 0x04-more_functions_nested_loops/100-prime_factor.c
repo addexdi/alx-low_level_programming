@@ -1,23 +1,21 @@
 #include <stdio.h>
-
 /**
- * main - Entry point.
- *
- * Return: Always 0.
- */
-
+  * main - entry block
+  * @void: no argument
+  * Return: 0
+  */
 int main(void)
 {
-	long n, i;
+	long i, number = 612852475143;
 
-	n = 612852475143;
-	for (i = 2; i < n; i++)
+	for (i  = 2; i <= number; i++)
 	{
-		while (n % i == 0)
-		n = n / i;
+		if (number % i == 0)
+		{
+			number = number / i;
+			i--;
+		}
 	}
-
-	printf("%lu\n", n);
-
+	printf("%lu\n", i);
 	return (0);
 }

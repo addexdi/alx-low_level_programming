@@ -1,22 +1,18 @@
 #include <stdio.h>
-#include <stdlib.h>
-/* Headers file used */
 
 /**
- * main - prints numbers using putchar
- *
- * Description: prints numbers using only putchar function
- * Return: returns zero when programme is completed
- */
+* main - Lanzador.
+*
+* Return: Always 0.
+*/
+
 int main(void)
 {
-	int ch;
+	int a = '0';
 
-	ch = '0';
-	while (ch <= '9')
+	for (a = '0'; a <= '9'; a++)
 	{
-		putchar(ch);
-		ch++;
+		putchar(a);
 	}
 	putchar('\n');
 	return (0);

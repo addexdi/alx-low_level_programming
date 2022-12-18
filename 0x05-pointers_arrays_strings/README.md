@@ -1,1 +1,1 @@
-This is for pointers, arrays and string constant projects
+This directory is about pointers and arrays.

@@ -1,22 +1,19 @@
 #include <stdio.h>
-#include <stdlib.h>
-/* These are all the header files used */
 
 /**
- * main- Prints alphabets in reverse order
- *
- * Description: All alphabets are printed using putchar() in reverse method
- * Return: returns zero if code is sucessful
- */
+* main - Lanzador.
+*
+* Return: Always 0.
+*/
+
 int main(void)
 {
-	int ch;
+	char z = 'z';
 
-	for (ch = 'z'; ch >= 'a'; ch--)
+	for (z = 'z'; z >= 'a'; z--)
 	{
-	putchar (ch);
+		putchar(z);
 	}
-
-	printf("\n");
+	putchar('\n');
 	return (0);
 }

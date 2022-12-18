@@ -1,10 +1,9 @@
-#include "main.h"
-/* Main header files here */
+#include "holberton.h"
 
 /**
- * _islower - checks if an alphabet is in lower case
- *@c: contains value to be compared
- * Return: return 0 or 1
+ * _islower - checks for lowercase character.
+ * @c: caracter recibo por main.
+ * Return: 1 if c is lowercase
  */
 int _islower(int c)
 {

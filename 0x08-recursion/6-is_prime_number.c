@@ -1,57 +1,39 @@
-#include "main.h"
-
+#include "holberton.h"
 /**
- *evaluate_num - recursion loop
- *@num: num
- *@iterator: number to iterate
- *Return: return 1 or 0
- */
-
-int evaluate_num(int num, int iterator)
+ * sqtRecursive - computes square root recursively
+ * @n: given number
+ * @m: comparison number
+ * Return: 1 if not found sqrroot, else sqrroot
+ **/
+int sqtRecursive(int n, int m)
 {
-
-	if (iterator == num - 1)
-{
-		return (1);
+	if (n <= 0)
+		return (-1);
+	if (n * n == m)
+		return (n);
+	return (sqtRecursive(n - 1, m));
 }
-
-	else if (num % iterator == 0)
-{
-		return (0);
-}
-
-	if (num % iterator != 0)
-{
-		return (evaluate_num(num, iterator + 1));
-}
-
-	return (0);
-
-}
-
 /**
- *is_prime_number - evaluate prime or not
- *@num: number
- *Return: return 1 prime - return 0 otherwise
- */
-
-int is_prime_number(int num)
+ * _sqrt_recursion - finds the natural square root of a number
+ * @n: given number
+ * Return: square root of n or -1
+ **/
+int _sqrt_recursion(int n)
 {
-
-	int iterator;
-
-	iterator = 2;
-
-/* only greater than 2*/
-	if (num < 2)
-{
-		return (0);
-}
-
-	if (num == 2)
-{
+	if (n == 1)
 		return (1);
+	return (sqtRecursive(n / 2, n));
 }
-
-	return (evaluate_num(num, iterator));
+/**
+ * is_prime_number - checks if a given number is prime
+ * @n: given number
+ * Return: 1 if number is prime else 0
+ **/
+int is_prime_number(int n)
+{
+	if (n <= 1 || _sqrt_recursion(n) >= 1)
+		return (0);
+	if (_sqrt_recursion(n) == -1)
+		return (1);
+	return (_sqrt_recursion(n));
 }

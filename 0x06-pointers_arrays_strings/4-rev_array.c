@@ -1,34 +1,27 @@
-#include "main.h"
+#include <stdio.h>
 /**
- * reverse_array - reverses the content of an array of integers
- * @a: an array of integers
- * @n: number of elements of the array
- * Return: returns void
+ * reverse_array - writes the character c to stdout
+ * @a: The character to print
+ * @n: dfsdfsdfsd
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
 void reverse_array(int *a, int n)
 {
-	int *start_c, *end_c, c;
-	int i;
 
+	int b = 0, c = 0;
+	int d[20];
 
-	start_c = a;
-	end_c = a;
-
-
-	for (i = 0; i < n - 1; i++)
+	n--;
+	while (b <= n)
 	{
-		end_c++;
+		d[n - b] = a[b];
+		b++;
+
 	}
-	for (i = 0; i < n / 2; i++)
+	while (c <= n)
 	{
-
-
-		c = *end_c;
-		*end_c = *start_c;
-		*start_c = c;
-
-		start_c++;
-		end_c--;
+		a[c] = d[c];
+		c++;
 	}
-
 }

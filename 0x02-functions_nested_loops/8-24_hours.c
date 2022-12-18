@@ -1,26 +1,22 @@
-#include "main.h"
-/* Main header file */
+#include "holberton.h"
 
 /**
- * jack_bauer - prints all minutes in a day
- *
- * Return: returns  0
+ * jack_bauer - Imprimir todas las horas del dia
  */
 void jack_bauer(void)
 {
-	int a;
-	int b;
+	int hour, minute;
 
-	for (a = 0; a <= 23; a++)
+	for (hour = 0; hour <= 23; hour++)
 	{
-		for (b = 0; b  <= 59; b++)
+		for (minute = 0; minute <= 59; minute++)
 		{
-		_putchar(a / 10 + '0');
-		_putchar(a % 10 + '0');
-		_putchar(':');
-		_putchar(b / 10 + '0');
-		_putchar(b % 10 + '0');
-		_putchar('\n');
+			_putchar((hour / 10) + '0');
+			_putchar((hour % 10) + '0');
+			_putchar(':');
+			_putchar((minute / 10) + '0');
+			_putchar((minute % 10) + '0');
+			_putchar('\n');
 		}
 	}
 }

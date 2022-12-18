@@ -1,22 +1,26 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
- * puts2 - prints every character of a string
+ * puts2 - main function.
+ * @str: Pointer, the string to print.
  *
- *@str: A pointer to an int
- * Return: void means correct
+ * Description: This function prints every other character of a string
+ * (divisible by two)
+ * Return: none.
  */
+
 void puts2(char *str)
 {
-	int a;
+	int i;
 
-	for (a = 0; str[a] != '\0'; a++)
+	while (str[i])
 	{
-		if (a % 2 == 0)
+		if (i % 2 == 0)
 		{
-			_putchar (str[a]);
+			_putchar(str[i]);
 		}
-	}
-	_putchar ('\n');
-}
 
+		i++;
+	}
+	_putchar('\n');
+}

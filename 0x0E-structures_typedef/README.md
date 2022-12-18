@@ -1,1 +1,1 @@
-This project is about using structures in C and using typedef
+Project 0x0E-structures_typedef

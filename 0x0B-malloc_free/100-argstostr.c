@@ -1,43 +1,42 @@
-#include "main.h"
+#include "holberton.h"
+#include <stdlib.h>
 /**
- * argstostr - prints args
- * @ac: takes in width of grid
- * @av: height of grid
- * Return: the args one line at a time
- */
-
+ * *argstostr - concatenates all arguements to the program
+ * @ac: arguement count
+ * @av: pointer to arguements
+ * Return: pointer to new space in memory or null
+ **/
 char *argstostr(int ac, char **av)
 {
-	char *str;
-	int count = 0, a = 0, b = 0, c = 0;
+	char *strDup;
+	int i, j, k, size;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
-	while (a < ac)
+	size = 0;
+/* count the number of chars in each string */
+	for (i = 0; i < ac; i++)
 	{
-		b = 0;
-		while (av[a][b] != '\0')
-		{
-			count++;
-			b++;
-		}
-		a++;
+		for (j = 0; av[i][j] != '\0'; j++)
+			size++;
+		size++;
 	}
-	count = count + ac + 1;
-	str = malloc(sizeof(char) * count);
-	if (str == NULL)
-	{
+	size++;
+/* allocate memory for total number of chars and
+ * new line for each word
+ */
+	strDup = malloc(sizeof(char) * size);
+	if (strDup == NULL)
 		return (NULL);
-	}
-	for (a = 0; a < ac; a++)
+	k = 0;
+	for (i = 0; i < ac; i++)
 	{
-		for (b = 0; av[a][b] != '\0'; b++)
+		for (j = 0; av[i][j] != '\0'; j++)
 		{
-			str[c] = av[a][b];
-			c++;
+			strDup[k++] = av[i][j];
 		}
-		str[c] = '\n';
-		c++;
+		strDup[k++] = '\n';
 	}
-	return (str);
+	strDup[k] = '\0';
+	return (strDup);
 }

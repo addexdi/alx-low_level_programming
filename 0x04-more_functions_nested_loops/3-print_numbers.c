@@ -1,18 +1,19 @@
-#include "main.h"
+#include "holberton.h"
+
 /**
- * print_numbers - print numbers
- * Return: Always 0.
- */
+*print_numbers - Funtion
+*
+*Return: 0
+*/
+
 void print_numbers(void)
 {
-	int i;
+	int n;
 
-	i = 0;
-	while (i < 10)
+	for (n = 0; n <= 9; n++)
 	{
-		_putchar (i + '0');
-		i++;
+		_putchar(n + '0');
 	}
+	_putchar('\n');
 
-	_putchar ('\n');
 }

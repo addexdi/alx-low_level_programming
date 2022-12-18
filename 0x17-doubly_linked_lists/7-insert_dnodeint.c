@@ -1,54 +1,53 @@
 #include "lists.h"
 
 /**
- * insert_dnodeint_at_index - inserts a new node at
- * a given position
- *
- * @h: head of the list
- * @idx: index of the new node
- * @n: value of the new node
- * Return: the address of the new node, or NULL if it failed
- */
-dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
+ * insert_dnodeint_at_index - inserts a new node at given index in the list
+ * @head: pointer to head of the list
+ * @idx: index to add at, starting from 0
+ * @n: value of new node
+ * Return: new node or null
+ **/
+dlistint_t *insert_dnodeint_at_index(dlistint_t **head, unsigned int idx, int n)
 {
-    dlistint_t *new;
-    dlistint_t *head;
-    unsigned int i;
+	unsigned int count;
+	dlistint_t *tmp, *new, *tmp_prev;
 
-    new = NULL;
-    if (idx == 0)
-        new = add_dnodeint(h, n);
-    else
-    {
-        head = *h;
-        i = 1;
-        if (head != NULL)
-            while (head->prev != NULL)
-                head = head->prev;
-        while (head != NULL)
-        {
-            if (i == idx)
-            {
-                if (head->next == NULL)
-                    new = add_dnodeint_end(h, n);
-                else
-                {
-                    new = malloc(sizeof(dlistint_t));
-                    if (new != NULL)
-                    {
-                        new->n = n;
-                        new->next = head->next;
-                        new->prev = head;
-                        head->next->prev = new;
-                        head->next = new;
-                    }
-                }
-                break;
-            }
-            head = head->next;
-            i++;
-        }
-    }
+	if (head == NULL && idx > 0)
+	return (NULL);
+	new = malloc(sizeof(dlistint_t));
+	if (new == NULL)
+		return (NULL);
+	new->n = n, new->prev = new->next = NULL;
 
-    return (new);
+	if (idx == 0)
+	{
+		if (*head)
+	{
+		new->next = *head;
+		(*head)->prev = new, *head = new;
+	}
+		else
+			*head = new;
+		return (new);
+	}
+	count = 1, tmp = (*head)->next;
+	while (tmp)
+	{
+		if (idx == count)
+		{
+			tmp->prev->next = new, new->prev = tmp->prev;
+			new->next = tmp, tmp->prev = new;
+			return (new);
+		}
+		count++;
+		tmp_prev = tmp;
+		tmp = tmp->next;
+	}
+	if (tmp == NULL && count == idx)
+	{
+		tmp_prev->next = new, new->prev = tmp_prev;
+		return (new);
+	}
+	free(new);
+	return (NULL);
 }

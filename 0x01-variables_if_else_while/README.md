@@ -1,2 +1,1 @@
-This is a task on variables, if, else and while lopp
-
+This repository contains the if, else and while variables.

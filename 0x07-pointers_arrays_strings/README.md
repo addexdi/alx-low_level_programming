@@ -1,1 +1,1 @@
-This is the read me for pointers
+This directory contains more pointers, arrays and strings.

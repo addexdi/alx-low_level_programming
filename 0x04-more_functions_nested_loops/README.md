@@ -1,1 +1,1 @@
-This is for more functions and nested loops project
+This folder contains more nested loops

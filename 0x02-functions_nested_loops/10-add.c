@@ -1,14 +1,14 @@
-#include "main.h"
-/* Main header file */
+#include "holberton.h"
 
 /**
- * add - adds two numbers together
- *
- * @i: holds one value
- * @k: holds another value
- * Return: returns zero
+ * add - Suma dos enteros por función.
+ * @i: Primera varable entera a sumar.
+ * @l: Segunda variable a sumar.
+ * Return: retorno con sumatoria
  */
-int add(int i, int k)
+int add(int i, int l)
 {
-	return (i + k);
+	int n;
+	 n = i + l;
+	return (n);
 }

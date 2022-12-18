@@ -1,24 +1,18 @@
-#include "main.h"
-/* main header file here */
+#include "holberton.h"
 
 /**
- * _abs - finds the absolute vale of a number
- *
- * @n: holds the number
- * Return: returns the absolute value of the number n
+ * _abs - checks number
+ * @r: entero recibo por main.
+ * Return: Devuelve r cuando es valor absoluto positivo,
  */
-int _abs(int n)
+int _abs(int r)
 {
-	if (n < 0)
+	if (r >= 0)
 	{
-		return (n * -1);
-	}
-	else if (n == 0)
-	{
-		return (0);
+		return (r);
 	}
 	else
 	{
-		return (n);
+		return (-r);
 	}
 }

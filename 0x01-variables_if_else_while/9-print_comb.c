@@ -1,23 +1,30 @@
 #include <stdio.h>
-#include <stdlib.h>
-/* Header files for this project */
 
 /**
- * main- prints characters
- *
- * Description: This just prints
- * Return: returns characters and numbers
- */
+* main - Lanzador.
+*
+* Return: Always 0.
+*/
+
 int main(void)
 {
-	int i;
+	int a = '0';
 
-	for (i = '0'; i <= '8'; i++)
+
+	while (a <= '9')
 	{
-		putchar(i);
-		putchar(',');
-		putchar(' ');
+		putchar(a);
+		if (a == '9')
+		{
+			putchar('\n');
+			return (0);
+		}
+		else
+		{
+			putchar(',');
+			putchar(' ');
+			a++;
+		}
 	}
-	putchar('9');
 	return (0);
 }

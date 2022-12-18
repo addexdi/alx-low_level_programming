@@ -1,40 +1,22 @@
 #include <stdio.h>
-#include <stdlib.h>
-/* These are my header files*/
 
 /**
- * main - prints alphabets except q and e
- *
- * Description: alplabets from a to z are printed excluding q and e
- * Return: returns zero at the end of the block
- */
+* main - Lanzador.
+*
+* Return: Always 0.
+*/
+
 int main(void)
 {
-	int ch;
+	char a = 'a';
 
-	ch = 'a';
-
-	while (ch <= 'z')
+	for (a = 'a'; a <= 'z'; a++)
 	{
-		if (ch == 'q')
+		if ((a != 'e') && (a != 'q'))
 		{
-			ch++;
-			continue;
+			putchar(a);
 		}
-
-		else if (ch == 'e')
-		{
-			ch++;
-			continue;
-		}
-		else
-		{
-			putchar (ch);
-			ch++;
-		}
-
 	}
-	printf("\n");
+	putchar('\n');
 	return (0);
 }
-

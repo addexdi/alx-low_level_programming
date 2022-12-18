@@ -1,49 +1,51 @@
-#include "main.h"
 #include <stdlib.h>
-
+#include "holberton.h"
 /**
- * string_nconcat - concatenates two strings.
- * @s1: first string.
- * @s2: second string.
- * @n: amount of bytes.
- *
- * Return: pointer to the allocated memory.
- * if malloc fails, status value is equal to 98.
- */
-char *string_nconcat(char *s1, char *s2, unsigned int n)
+ * *_realloc -  reallocates a memory block using malloc and free
+ * @ptr: void pointer
+ * @old_size: already allocated size
+ * @new_size: new size to allocate
+ * Return: pointer to newly allocated memory or null
+ **/
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	char *sout;
-	unsigned int ls1, ls2, lsout, i;
+	unsigned char *np;
+	unsigned int i;
 
-	if (s1 == NULL)
-		s1 = "";
-
-	if (s2 == NULL)
-		s2 = "";
-
-	for (ls1 = 0; s1[ls1] != '\0'; ls1++)
-		;
-
-	for (ls2 = 0; s2[ls2] != '\0'; ls2++)
-		;
-
-	if (n > ls2)
-		n = ls2;
-
-	lsout = ls1 + n;
-
-	sout = malloc(lsout + 1);
-
-	if (sout == NULL)
+	if (new_size == old_size)
+		return (ptr);
+	if (new_size == 0 && ptr != NULL)
+	{
+		free(ptr);
 		return (NULL);
-
-	for (i = 0; i < lsout; i++)
-		if (i < ls1)
-			sout[i] = s1[i];
-		else
-			sout[i] = s2[i - ls1];
-
-	sout[i] = '\0';
-
-	return (sout);
+	}
+	if (ptr == NULL)
+	{
+		ptr = malloc(new_size * sizeof(void *));
+		if (ptr == NULL)
+			return (NULL);
+		return (ptr);
+	}
+	np = malloc(new_size * sizeof(char));
+	if (np == NULL)
+		return (NULL);
+	i = 0;
+	if (new_size > old_size)
+	{
+		while (i < old_size)
+		{
+			np[i] = ((char *)ptr)[i];
+			i++;
+		}
+		free(ptr);
+		return (np);
+	}
+/* if new_size < old_size */
+	while (i < new_size)
+	{
+		np[i] = ((char *)ptr)[i];
+		i++;
+	}
+	free(ptr);
+	return (np);
 }

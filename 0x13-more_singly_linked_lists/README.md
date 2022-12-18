@@ -1,1 +1,1 @@
-This is for singly linked list in c language
+This directory contains more singly linked list

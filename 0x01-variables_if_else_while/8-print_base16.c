@@ -1,25 +1,23 @@
 #include <stdio.h>
-#include <stdlib.h>
-/* Headers used for the project */
 
 /**
- *main- prints all hex values
- *
- * Description: This prints all the hex digits and This prints for answer main
- * Return: This returns zero after final execution
- */
+* main - Lanzador.
+*
+* Return: Always 0.
+*/
+
 int main(void)
 {
-	int ch;
-	int i;
+	char a = '0';
+	char l = 'a';
 
-	for (ch = '0'; ch <= '9'; ch++)
+	for (a = '0'; a <= '9'; a++)
 	{
-		putchar(ch);
+		putchar(a);
 	}
-	for (i = 'a'; i <= 'f'; i++)
+	for (l = 'a'; l <= 'f'; l++)
 	{
-		putchar (i);
+		putchar(l);
 	}
 	putchar('\n');
 	return (0);
